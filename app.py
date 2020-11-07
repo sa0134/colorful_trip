@@ -9,9 +9,9 @@ def hello_world():
     return render_template('index.html')
 
 
-@app.route('/mypage')
+@app.route('/test')
 def my_page():
-    return 'This is My Page!'
+    return render_template('contents1.html')
 
 
 if __name__ == '__main__':

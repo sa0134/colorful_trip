@@ -2,6 +2,7 @@
     <meta charset="UTF-8">
     <title>나홀로 여행중~</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -18,6 +19,39 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            check_answer(0);
+        });
+        let answer_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let MAX_COUNT = 10;
+
+        function check_answer(question_num, answer_num) {
+            for (let i = 0; i < MAX_COUNT; i++) {
+
+
+                if (i == question_num) {
+                    //보이게 하기
+                    let class_name = '.answer' + (i + 1);
+                    console.log('SHOW ', class_name);
+                    $(class_name).show();
+                    continue;
+                }
+                //안보이게 하기
+                let class_name = '.answer' + (i + 1);
+                console.log('HIDE ', class_name);
+                $(class_name).hide();
+
+
+            }
+
+
+            if (question_num != 0) {
+                answer_list[question_num - 1] = answer_num;
+            }
+            console.log(answer_list)
+        }
+    </script>
     <style>
         .wrap {
 
@@ -40,9 +74,41 @@
         }
 
         .answer1:after {
-            background-image: url('../static/blue.jpeg');
+            background-image: url('../static/blue1.jpeg');
             background-repeat: no-repeat;
             background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.6 !important;
+            filter: alpha(opacity=60);
+
+
+        }
+
+        .answer2 {
+            /*background-image: url('../static/blue.jpeg');*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+            width: 100%;
+            height: 100%;
+            /*text-align: center;*/
+
+            z-index: 1;
+            position: relative;
+        }
+
+        .answer2:after {
+            background-image: url('../static/yellow1.jpg');
+            background-repeat: no-repeat;
+            background-position: right;
             background-size: cover;
             width: 100%;
             height: 100%;
@@ -63,9 +129,9 @@
 
         }
 
-        .Question_answers_1 {
+        .Question_answers {
             margin: auto;
-            padding: 80px;
+            padding: 40px;
 
         }
 
@@ -92,6 +158,134 @@
 
         }
 
+        .Question_answer-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            /*background-color: transparent;*/
+            background-color: #FFD167;
+
+            border-radius: 20px;
+            font-size: 16px;
+            color: #000000;
+            line-height: 1.63;
+            letter-spacing: -1px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 36px;
+        }
+
+        .question {
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+        .Question_answer-3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            /*background-color: transparent;*/
+            background-color: #EB2227;
+
+            border-radius: 20px;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.63;
+            letter-spacing: -1px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 36px;
+        }
+
+        .answer3 {
+            /*background-image: url('../static/blue.jpeg');*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+            width: 100%;
+            height: 100%;
+            /*text-align: center;*/
+
+            z-index: 1;
+            position: relative;
+        }
+
+        .answer3:after {
+            background-image: url('../static/red1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.6 !important;
+            filter: alpha(opacity=60);
+
+
+        }
+
+        .answer4 {
+            /*background-image: url('../static/blue.jpeg');*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+            width: 100%;
+            height: 100%;
+            /*text-align: center;*/
+
+            z-index: 1;
+            position: relative;
+        }
+
+        .answer4:after {
+            background-image: url('../static/purple1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.7 !important;
+            filter: alpha(opacity=60);
+
+
+        }
+
+        .Question_answer-4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            /*background-color: transparent;*/
+            background-color: #A3238B;
+
+            border-radius: 20px;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.63;
+            letter-spacing: -1px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 36px;
+        }
+
 
     </style>
 
@@ -100,13 +294,80 @@
     <div class="wrap">
 
         <div class="answer1">
-jkjkjk
+            <div class="question">
+                <br>
+                <h2>Q1.여행을 떠나기로 맘먹은 당신<br>플레이리스트에 담은 곡은?</h2>
+            </div>
+
             <div class="answers_family">
-                <ul class="Question_answers_1">
-                    <li class="Question_answer-1"><span>토닥토닥 힐링송<br></span><span>수고했어~오늘도 -옥상달빛-<br></span></li>
-                    <li class="Question_answer-1"><span>에너지 파파파<br></span><span>Dynamite -BTS-<br></span></li>
-                    <li class="Question_answer-1"><span>시동걸어볼까<br></span><span>여행 -볼빨간 사춘기-<br></span></li>
-                    <li class="Question_answer-1"><span>동심의 세계로<br></span><span>하울의 움직이는 성 OST<br></span></li>
+                <ul class="Question_answers">
+                    <li class="Question_answer-1" onclick="check_answer(1,1)"><span>토닥토닥 힐링송<br></span><span>수고했어~오늘도 -옥상달빛-<br></span>
+                    </li>
+                    <li class="Question_answer-1" onclick="check_answer(1,2)"><span>에너지 파파파<br></span><span>Dynamite -BTS-<br></span>
+                    </li>
+                    <li class="Question_answer-1" onclick="check_answer(1,3)">
+                        <span>시동걸어볼까<br></span><span>여행 -볼빨간 사춘기-<br></span></li>
+                    <li class="Question_answer-1" onclick="check_answer(1,4)"><span>동심의 세계로<br></span><span>하울의 움직이는 성 OST<br></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="answer2">
+            <div class="question">
+                <br>
+                <h2>Q2.여행을 떠나기 바로 전날<br>이것만은 꼭 챙기고 갈거야!</h2>
+            </div>
+
+            <div class="answers_family">
+                <ul class="Question_answers">
+                    <li class="Question_answer-2" onclick="check_answer(2,4)"><span>느끼는 생각과 감정을 담을<br></span><span>다이어리 노트<br></span>
+                    </li>
+                    <li class="Question_answer-2" onclick="check_answer(2,1)"><span>지친 내 발을 위해<br></span><span>휴족시간 힐링패치<br></span>
+                    </li>
+                    <li class="Question_answer-2" onclick="check_answer(2,3)">
+                        <span>폰카와는 또 다른 맛<br></span><span>필름카메라<br></span></li>
+                    <li class="Question_answer-2" onclick="check_answer(2,2)"><span>챙기긴 뭘 챙겨<br></span><span>그냥 ㄱㅈㅇ(가즈아)<br></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="answer3">
+            <div class="question">
+                <br>
+                <h2>Q3.여행 1일차, 옆을 돌아보니 연예인이...?<br>당신의 여행에 동행할 그(그녀)는?</h2>
+            </div>
+
+            <div class="answers_family">
+                <ul class="Question_answers">
+                    <li class="Question_answer-3" onclick="check_answer(3,4)"><span>미술에 박학다식한 랩몬스터와<br></span><span>함께 미술관 데이트를<br></span>
+                    </li>
+
+                    <li class="Question_answer-3" onclick="check_answer(3,3)">
+                        <span>거리에서 버스킹을 하자는<br></span><span>태연과 즉석 공연에 도전<br></span></li>
+                    <li class="Question_answer-3" onclick="check_answer(3,1)"><span>반려견과 산책 온 박서준과 함께<br></span><span>음악 들으며 휴식을<br></span>
+                    </li>
+                    <li class="Question_answer-3" onclick="check_answer(3,2)"><span>서핑의 신<br></span><span>유세윤과 함께 액티비티 여행<br></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="answer4">
+            <div class="question">
+                <br>
+                <h2>Q4.둘째날 너무 배고파 찾아 헤맨 곳<br>당신이 먹고 싶은 맛집 메뉴?</h2>
+            </div>
+
+            <div class="answers_family">
+                <ul class="Question_answers">
+                    <li class="Question_answer-4" onclick="check_answer(4,1)"><span>자극적인 맛은 노!<br></span><span>깔끔하고 정갈한 나물정식<br></span>
+                    </li>
+
+                    <li class="Question_answer-4" onclick="check_answer(4,2)">
+                        <span>라이딩 후 끓여먹는<br></span><span>편의점 라면<br></span></li>
+                    <li class="Question_answer-4" onclick="check_answer(4,3)"><span>뭐가 나올진 몰라......<br></span><span>간판 없는 음식점의 랜덤 메뉴<br></span>
+                    </li>
+                    <li class="Question_answer-4" onclick="check_answer(4,4)"><span>모름지기 음식은 눈으로 먹는 법!<br></span><span>플레이팅 완벽한 미슐랭 식당 추천 메뉴 <br></span>
+                    </li>
                 </ul>
             </div>
         </div>
