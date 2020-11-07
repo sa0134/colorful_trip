@@ -2,83 +2,21 @@
     <meta charset="UTF-8">
     <title>나홀로 여행중~</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&amp;display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
     <style>
-        .wrap {
-
-            margin: auto;
-            width: 500px;
-            text-align: center;
+        .Question_answers__1djmb {
+            margin: 0;
+            padding: 0;
         }
 
-        .answer1 {
-            /*background-image: url('../static/blue.jpeg');*/
-            /*background-repeat: no-repeat;*/
-            /*background-position: center;*/
-            /*background-size: cover;*/
-            width: 100%;
-            height: 100%;
-            /*text-align: center;*/
-
-            z-index: 1;
-            position: relative;
-        }
-
-        .answer1:after {
-            background-image: url('../static/blue.jpeg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-            opacity: 0.6 !important;
-            filter: alpha(opacity=60);
-
-
-        }
-
-        .answers_family {
-            /*padding-top: 120px;*/
-
-        }
-
-        .Question_answers_1 {
-            margin: auto;
-            padding: 80px;
-
-        }
-
-
-        .Question_answer-1 {
+        .Question_answer-item__3yOqj {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-
+            width: calc(100% - 60px);
+            min-height: 92px;
             background-color: transparent;
-            background-color: #00ACDC;
-
+            background-color: #172E56;
             border-radius: 20px;
             font-size: 16px;
             color: #222;
@@ -89,26 +27,29 @@
             text-align: center;
             padding: 20px;
             margin-bottom: 36px;
-
+            margin-left: 30px;
+            margin-right: 30px;
         }
 
-
+        ul {
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
     </style>
 
 </head>
 <body>
-    <div class="wrap">
+    <ul class="Question_answers__1djmb">
+        <li class="Question_answer-item__3yOqj"><span>토닥토닥 힐링송<br></span><span>수고했어~오늘도 -옥상달빛-<br></span></li>
+        <li class="Question_answer-item__3yOqj"><span>에너지 파파파<br></span><span>Dynamite -BTS-<br></span></li>
+        <li class="Question_answer-item__3yOqj"><span>시동걸어볼까<br></span><span>여행 -볼빨간 사춘기-<br></span></li>
+        <li class="Question_answer-item__3yOqj"><span><br></span><span>혼자 집에서 뒹굴뒹굴 거린다<br></span></li>
+    </ul>
 
-        <div class="answer1">
-jkjkjk
-            <div class="answers_family">
-                <ul class="Question_answers_1">
-                    <li class="Question_answer-1"><span>토닥토닥 힐링송<br></span><span>수고했어~오늘도 -옥상달빛-<br></span></li>
-                    <li class="Question_answer-1"><span>에너지 파파파<br></span><span>Dynamite -BTS-<br></span></li>
-                    <li class="Question_answer-1"><span>시동걸어볼까<br></span><span>여행 -볼빨간 사춘기-<br></span></li>
-                    <li class="Question_answer-1"><span>동심의 세계로<br></span><span>하울의 움직이는 성 OST<br></span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
 </body>
