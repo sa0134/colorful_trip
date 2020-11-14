@@ -29,28 +29,82 @@
         function check_answer(question_num, answer_num) {
             for (let i = 0; i < MAX_COUNT; i++) {
 
+                if (question_num != 0) {
+                    answer_list[question_num - 1] = answer_num;
+                }
+
+                if (question_num == MAX_COUNT) {
+                    console.log("끝");
+                    //결과화면
+                    // 1. answer_list 중에서 어떤 답이 제일 많은지 확인
+                    let type = calcReult(answer_list);
+                    // 2. 그 답에 따라 결과 화면 출력
+                    console.log(type);
+
+                    //ajax call GET
+                    // /result/${type}
+                    // /result/yellow
+                     window.location.href="/result/" + type;
+                    // $.ajax({
+                    //     type: "GET",
+                    //     url: "/result/" + type,
+                    //     data: {},
+                    //     success: function (response) {
+                    //         // console.log(response)
+                    //     }
+                    // })
+
+                }
 
                 if (i == question_num) {
                     //보이게 하기
                     let class_name = '.answer' + (i + 1);
-                    console.log('SHOW ', class_name);
+                    // console.log('SHOW ', class_name);
                     $(class_name).show();
                     continue;
                 }
                 //안보이게 하기
                 let class_name = '.answer' + (i + 1);
-                console.log('HIDE ', class_name);
+                // console.log('HIDE ', class_name);
                 $(class_name).hide();
-
-
             }
 
-
-            if (question_num != 0) {
-                answer_list[question_num - 1] = answer_num;
-            }
-            console.log(answer_list)
         }
+
+        function calcReult(answer_list) {
+            let ans_count = [0, 0, 0, 0];
+
+            for (let i = 0; i < answer_list.length; i++) {
+                let ans = answer_list[i];
+                if (ans == 1) {
+                    ans_count[0] += 1;
+                } else if (ans == 2) {
+                    ans_count[1] += 1;
+                } else if (ans == 3) {
+                    ans_count[2] += 1;
+                } else ans_count[3] += 1;
+            }
+
+            // 반복문으로 1,2,3,4 답 개수 확인
+            // 출력 4개 변수
+            // 1. ans_list 에서 제일 큰 값을 찾는다
+            let MaxValue = Math.max.apply(null, ans_count);
+            // // 2. 그 값의 인덱스를 확인한다
+            console.log(MaxValue)
+            let CheckIndex = ans_count.indexOf(MaxValue)
+            // // 3. 그것에 따라 결과를 리턴해준다
+            console.log(CheckIndex)
+
+            if (CheckIndex == 0) {
+                return 'yellow'
+            } else if (CheckIndex == 1) {
+                return 'red'
+            } else if (CheckIndex == 2) {
+                return 'blue'
+            } else return 'purple'
+
+        }
+
     </script>
     <style>
         .wrap {
@@ -74,7 +128,7 @@
         }
 
         .answer1:after {
-            background-image: url('../static/blue1.jpeg');
+            background-image: url('../static/blue2.JPG');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -86,7 +140,7 @@
             top: 0;
             left: 0;
             content: "";
-            opacity: 0.6 !important;
+            opacity: 0.7 !important;
             filter: alpha(opacity=60);
 
 
@@ -137,6 +191,7 @@
 
 
         .Question_answer-1 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -159,6 +214,7 @@
         }
 
         .Question_answer-2 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -181,12 +237,14 @@
         .question {
             font-family: 'Nanum Pen Script', cursive;
         }
+
         .question2 {
             color: white;
             font-family: 'Nanum Pen Script', cursive;
         }
 
         .Question_answer-3 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -271,6 +329,7 @@
         }
 
         .Question_answer-4 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -323,6 +382,7 @@
         }
 
         .Question_answer-5 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -375,6 +435,7 @@
         }
 
         .Question_answer-6 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -425,6 +486,7 @@
         }
 
         .Question_answer-7 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -445,6 +507,7 @@
         }
 
         .Question_answer-8 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -496,7 +559,7 @@
 
         }
 
-         .answer10 {
+        .answer10 {
             /*background-image: url('../static/');*/
             /*background-repeat: no-repeat;*/
             /*background-position: center;*/
@@ -527,7 +590,9 @@
 
 
         }
+
         .Question_answer-10 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -581,7 +646,8 @@
 
         }
 
-          .Question_answer-9 {
+        .Question_answer-9 {
+            cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -600,7 +666,6 @@
             padding: 20px;
             margin-bottom: 36px;
         }
-
 
 
     </style>
@@ -739,7 +804,8 @@
                     </li>
                     <li class="Question_answer-7" onclick="check_answer(7,3)">
                         <span>언제 또 할 수 있겠어?<br></span><span>지역 명사와 함께하는 전통 의상만들기 체험<br></span></li>
-                    <li class="Question_answer-7" onclick="check_answer(7,2)"><span>시원한 파도위에서 리듬을 느껴보고파!<br></span><span>서핑클래스 ㄱㄱ<br></span>
+                    <li class="Question_answer-7" onclick="check_answer(7,2)">
+                        <span>시원한 파도위에서 리듬을 느껴보고파!<br></span><span>서핑클래스 ㄱㄱ<br></span>
                     </li>
                 </ul>
             </div>
@@ -757,7 +823,8 @@
 
                     <li class="Question_answer-8" onclick="check_answer(8,3)">
                         <span>남들이 본 적 없는 곳만 찍을거야!<br></span><span>호기심을 불러일으키는 일몰 풍경사진<br></span></li>
-                    <li class="Question_answer-8" onclick="check_answer(8,1)"><span>이름 모르지만<br></span><span>길가에 핀 들꽃 사진<br></span>
+                    <li class="Question_answer-8" onclick="check_answer(8,1)">
+                        <span>이름 모르지만<br></span><span>길가에 핀 들꽃 사진<br></span>
                     </li>
                     <li class="Question_answer-8" onclick="check_answer(8,2)"><span>오늘 나의 힘찬 발걸음을 기록!<br></span><span>여행지와 맞닿은 내 신발사진<br></span>
                     </li>

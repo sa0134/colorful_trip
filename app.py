@@ -8,10 +8,14 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-
 @app.route('/test')
 def my_page():
     return render_template('contents1.html')
+
+@app.route('/result/yellow', methods=['GET'])
+def result_yellow():
+    return render_template('yellow.html')
+
 
 
 if __name__ == '__main__':
