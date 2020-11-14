@@ -496,6 +496,111 @@
 
         }
 
+         .answer10 {
+            /*background-image: url('../static/');*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+            width: 100%;
+            height: 100%;
+            /*text-align: center;*/
+
+            z-index: 1;
+            position: relative;
+        }
+
+        .answer10:after {
+            background-image: url('../static/blue4.JPG');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.8 !important;
+            filter: alpha(opacity=60);
+
+
+        }
+        .Question_answer-10 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background-color: transparent;
+            background-color: #00ACDC;
+
+            border-radius: 20px;
+            font-size: 16px;
+            color: #222;
+            color: #fff;
+            line-height: 1.63;
+            letter-spacing: -1px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 36px;
+
+        }
+
+        .answer9 {
+            /*background-image: url('../static/blue.jpeg');*/
+            /*background-repeat: no-repeat;*/
+            /*background-position: center;*/
+            /*background-size: cover;*/
+            width: 100%;
+            height: 100%;
+            /*text-align: center;*/
+
+            z-index: 1;
+            position: relative;
+        }
+
+        .answer9:after {
+            background-image: url('../static/purple5.JPG');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            opacity: 0.8 !important;
+            filter: alpha(opacity=60);
+
+
+        }
+
+          .Question_answer-9 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            /*background-color: transparent;*/
+            background-color: #A3238B;
+
+            border-radius: 20px;
+            font-size: 16px;
+            color: white;
+            line-height: 1.63;
+            letter-spacing: -1px;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 36px;
+        }
+
 
 
     </style>
@@ -655,6 +760,44 @@
                     <li class="Question_answer-8" onclick="check_answer(8,1)"><span>이름 모르지만<br></span><span>길가에 핀 들꽃 사진<br></span>
                     </li>
                     <li class="Question_answer-8" onclick="check_answer(8,2)"><span>오늘 나의 힘찬 발걸음을 기록!<br></span><span>여행지와 맞닿은 내 신발사진<br></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="answer9">
+            <div class="question">
+                <br>
+                <h2>Q9.갑자기 여행 중 내리는 비! <br>당신의 선택은?</h2>
+            </div>
+
+            <div class="answers_family">
+                <ul class="Question_answers">
+                    <li class="Question_answer-9" onclick="check_answer(9,1)"><span>바깥 활동은 잠시 멈춰두고<br></span><span>호텔에서 뒹굴뒹굴<br></span>
+                    </li>
+                    <li class="Question_answer-9" onclick="check_answer(9,2)"><span>비가 무슨 상관?!<br></span><span>비도 나의 여행의 일부! 원래대로 고고<br></span>
+                    </li>
+                    <li class="Question_answer-9" onclick="check_answer(9,3)">
+                        <span>비 올때의 갬성 그대로<br></span><span>카페에서 사진 찍으며 음악 듣자<br></span></li>
+                    <li class="Question_answer-9" onclick="check_answer(9,4)"><span>비 올때는 실내활동이지~<br></span><span>박물관이나 미술관 고고링!<br></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="answer10">
+            <div class="question">
+                <br>
+                <h2>Q10.아쉬운 여행의 끝.. <br>여행을 추억하는 당신에겐 어떤 장면이?</h2>
+            </div>
+
+            <div class="answers_family">
+                <ul class="Question_answers">
+                    <li class="Question_answer-10" onclick="check_answer(10,4)"><span>다시 볼 수 없을지도 모르는<br></span><span>특별기획 전시회<br></span>
+                    </li>
+                    <li class="Question_answer-10" onclick="check_answer(10,3)"><span>우연히 카메라에 잡혔던<br></span><span>여행지에서 만난 귀여운 강아지<br></span>
+                    </li>
+                    <li class="Question_answer-10" onclick="check_answer(10,2)">
+                        <span>평소와는 다르게 부지런한 아침을 맞았던<br></span><span>일출을 본 나에게 칭찬을...!<br></span></li>
+                    <li class="Question_answer-10" onclick="check_answer(10,1)"><span>아무도 없이 혼자만 감상했었던<br></span><span>바다풍경<br></span>
                     </li>
                 </ul>
             </div>
